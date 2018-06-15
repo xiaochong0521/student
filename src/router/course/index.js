@@ -5,6 +5,7 @@ import check from '@/pages/course/check';
 import ifinish from '@/pages/course/ifinish';
 import review from '@/pages/course/review';
 import courseReview from '@/pages/course/courseReview'
+import timetable from '@/pages/course/timetable'
 
 export default [
     {
@@ -49,4 +50,10 @@ export default [
         name: 'courseReview',
         component: courseReview
     },
+    {
+        name: '我的课程',
+        path: 'timetable',
+        name: 'timetable',
+        component: timetable
+    }
 ]
