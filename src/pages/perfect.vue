@@ -70,7 +70,14 @@
 
 <script>
     export default {
-        
+        beforeCreate:function(){
+            var _that = this;
+            _that.baseAxios.get('/api/v1/_bare/subject_category', {q:""})
+                .then(function(response){
+                    console.log(response)
+                })
+            
+        },
     }
 </script>
 

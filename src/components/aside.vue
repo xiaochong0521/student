@@ -2,7 +2,7 @@
     <div class="aside">
         <div class="select-bar">
             <ul class="bars">
-                <router-link v-for="(items, index) in bars"  :to=items.path>
+                <router-link v-for="(items, index) in bars"  :to=items.path :key="index">
                 <li class="active"  @click="clickIndex(index)">
                 
                     <img class="imgs center" :src=items.img alt="">
