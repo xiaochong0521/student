@@ -51,11 +51,7 @@
     </div>
 </template>
 
-<script>
-    export default {
-        
-    }
-</script>
+
 
 <style scoped>
     .finish{
@@ -204,3 +200,10 @@
     }
 
 </style>
+<script>
+    export default {
+        beforeCreate(){
+            console.log(this.$route.query.name)
+        }
+    }
+</script>
