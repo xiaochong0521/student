@@ -2,10 +2,13 @@
     <div class="aside">
         <div class="select-bar">
             <ul class="bars">
-                <li class="active" v-for="(items, index) in bars">
+                <router-link v-for="(items, index) in bars"  :to=items.path>
+                <li class="active"  @click="clickIndex(index)">
+                
                     <img class="imgs center" :src=items.img alt="">
                     <span>{{items.name}}</span>
                 </li>
+                </router-link >
                 <!-- <li class="active">
                     <img class="imgs" src="@/assets/kechengbiao_h.png" alt="">
                     <span>课程表</span>
@@ -33,7 +36,7 @@
             </ul>
         </div>
         <div class="wenti">
-
+        
         </div>
     </div>
 </template>
@@ -45,33 +48,42 @@
             return{
                 bars:[{
                     name: '个人中心',
-                    img: '@/assets/me01.png',
-                    path: ''
+                    img: require('@/assets/me01.png'),
+                    path: '/center/personal'
                 },{
                     name: '课程表',
                     img: require('@/assets/kechengbiao_h.png'),
                     path: ''
                 },{
                     name: '课前预习',
-                    img: '@/assets/yuxi_h.png',
+                    img: require('@/assets/yuxi_h.png'),
                     path: ''
                 },{
                     name: '课后作业',
-                    img: '@/assets/zuoye_h.png',
+                    img: require('@/assets/zuoye_h.png'),
                     path: ''
                 },{
                     name: '我的课程',
-                    img: '@/assets/kecheng_h.png',
+                    img: require('@/assets/kecheng_h.png'),
                     path: ''
                 },{
                     name: '我的订单',
-                    img: '@/assets/dingdan_h.png',
+                    img: require('@/assets/dingdan_h.png'),
                     path: ''
                 },{
                     name: '成长报告',
-                    img: '@/assets/chengzhang_h.png',
+                    img: require('@/assets/chengzhang_h.png'),
                     path: ''
-                }]
+                }],
+                 arr2 : [
+                            require('@/assets/me02.png'),
+                            require('@/assets/kechengbiao_r.png'),
+                            require('@/assets/yuxi_r.png'),
+                            require('@/assets/zuoye_r.png'),
+                            require('@/assets/kecheng_r.png'),
+                            require('@/assets/dingdan_r.png'),
+                            require('@/assets/chengzhang_r.png')
+                        ]
             }
         },
         watch:{
@@ -84,6 +96,11 @@
             activity(){
                 var arr = ['me01.png','kechengbiao_h.png','yuxi_h.png','zuoye_h.png','kecheng_h.png','dingdan_h.png','chengzhang_h.png']
                 var arr2 = ['me02.png','kechengbiao_r.png','yuxi_r.png','zuoye_r.png','kecheng_r.png','dingdan_r.png','chengzhang_r.png']
+            },
+            clickIndex(index){
+                var lastrouter= window.location.hash.split("/")[window.location.hash.split("/").length-2]
+                console.log(lastrouter)
+                 this.bars[index]=this.arr2[index]
             }
         }
     }
