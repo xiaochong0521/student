@@ -53,27 +53,27 @@
                 },{
                     name: '课程表',
                     img: require('@/assets/kechengbiao_h.png'),
-                    path: ''
+                    path: '/schedule/schedule'
                 },{
                     name: '课前预习',
                     img: require('@/assets/yuxi_h.png'),
-                    path: ''
+                    path: '/preview/preview'
                 },{
                     name: '课后作业',
                     img: require('@/assets/zuoye_h.png'),
-                    path: ''
+                    path: '/homework/willCompleted'
                 },{
                     name: '我的课程',
                     img: require('@/assets/kecheng_h.png'),
-                    path: ''
+                    path: '/course/timetable'
                 },{
                     name: '我的订单',
                     img: require('@/assets/dingdan_h.png'),
-                    path: ''
+                    path: '/order/order'
                 },{
                     name: '成长报告',
                     img: require('@/assets/chengzhang_h.png'),
-                    path: ''
+                    path: '/report/report'
                 }],
                  arr2 : [
                             require('@/assets/me02.png'),
@@ -107,6 +107,9 @@
 </script>
 
 <style scoped>
+    a{
+        text-decoration: none;
+    }
     .aside{
         width: 180px;
         float: left;
